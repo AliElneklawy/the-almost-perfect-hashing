@@ -17,9 +17,19 @@ assert ht['nonexistent_key'] is None
 # Test the __delitem__() method
 del ht[12345]
 assert ht[12345] is None
-# Add more tests for deleting keys and verifying their absence
+del ht['hello']
+del ht[12345]
+del ht[3.1415]
+del ht[True]
+del ht[False]
+del ht[None]
+assert ht['hello'] is None
+assert ht[12345] is None
+assert ht[3.1415] is None
+assert ht[True] is None
+assert ht[False] is None
+assert ht[None] is None
 
-# Test the resize() method
 
 
 # Test the occupied attribute
