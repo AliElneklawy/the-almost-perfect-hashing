@@ -7,6 +7,13 @@ class HashTable:
         self.occupied = 0
     
     def fnv_hash(self, key):
+        if key == True:
+            key = 1.111111111111101
+        elif key == False:
+            key = 0.1234567854564
+        elif key == None:
+            key = 2.222222225486
+
         if isinstance(key, str):
             key = str(key)
             hash = 0
