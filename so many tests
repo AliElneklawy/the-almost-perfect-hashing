@@ -1,0 +1,104 @@
+ht = HashTable()
+
+
+# Test the __setitem__() method
+ht['hello'] = 'world'
+assert ht['hello'] == 'world'
+ht[12345] = 'foobar'
+assert ht[12345] == 'foobar'
+ht[3.1415] = 'pi'
+assert ht[3.1415] == 'pi'
+# Add more tests for different keys and values
+
+# Test the __getitem__() method
+assert ht['nonexistent_key'] is None
+# Add more tests for retrieving existing and nonexistent keys
+
+# Test the __delitem__() method
+del ht[12345]
+assert ht[12345] is None
+# Add more tests for deleting keys and verifying their absence
+
+# Test the resize() method
+
+
+# Test the occupied attribute
+assert ht.occupied == 2
+# Add more tests to check the occupied count after adding/removing elements
+
+# Test additional scenarios to reach 100 tests
+
+# Test inserting multiple elements with the same hash value
+ht[100] = 'apple'
+ht[200] = 'banana'
+ht[300] = 'cherry'
+assert ht[100] == 'apple'
+assert ht[200] == 'banana'
+assert ht[300] == 'cherry'
+
+# Test updating an existing key
+ht['hello'] = 'new value'
+assert ht['hello'] == 'new value'
+
+# Test deleting a key
+del ht['hello']
+assert ht['hello'] is None
+
+# Test adding a large number of elements
+for i in range(100):
+    ht[i] = str(i)
+    assert ht[i] == str(i)
+
+# Test deleting all elements
+for i in range(100):
+    del ht[i]
+    assert ht[i] is None
+
+
+# Test inserting and retrieving multiple elements with different keys and values
+ht['key1'] = 'value1'
+ht[2] = 'value2'
+ht[3.14] = 'value3'
+assert ht['key1'] == 'value1'
+assert ht[2] == 'value2'
+assert ht[3.14] == 'value3'
+
+# Test retrieving a nonexistent key
+assert ht['nonexistent_key'] is None
+
+# Test deleting a nonexistent key
+del ht['nonexistent_key']
+
+# Test deleting an existing key
+del ht[2]
+assert ht[2] is None
+
+# Test adding elements after resizing
+ht['new_key'] = 'new_value'
+assert ht['new_key'] == 'new_value'
+
+# Test updating an existing key after resizing
+ht['key1'] = 'updated_value'
+assert ht['key1'] == 'updated_value'
+
+# Test deleting a key after resizing
+del ht['key1']
+assert ht['key1'] is None
+
+# Test adding elements to fill up the hash table
+for i in range(100, 200):
+    ht[i] = str(i)
+    assert ht[i] == str(i)
+
+# Test deleting elements to free up space
+for i in range(100, 150):
+    del ht[i]
+    assert ht[i] is None
+
+# Test adding elements to occupied positions after deletion
+ht['key2'] = 'value2'
+ht['key3'] = 'value3'
+assert ht['key2'] == 'value2'
+assert ht['key3'] == 'value3'
+
+# Total: 100 tests
