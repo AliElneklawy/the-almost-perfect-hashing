@@ -95,9 +95,15 @@ for i in range(100, 150):
     del ht[i]
     assert ht[i] is None
 
+ht[True] = 'True'
+ht[False] = 'False'
+ht[None] = 'None'
+assert ht[True] == 'True'
+assert ht[False] == 'False'
+assert ht[None] == 'None'
+
 # Test adding elements to occupied positions after deletion
 ht['key2'] = 'value2'
 ht['key3'] = 'value3'
 assert ht['key2'] == 'value2'
 assert ht['key3'] == 'value3'
-
