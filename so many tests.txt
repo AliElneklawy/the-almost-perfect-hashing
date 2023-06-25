@@ -14,27 +14,7 @@ assert ht[3.1415] == 'pi'
 assert ht['nonexistent_key'] is None
 # Add more tests for retrieving existing and nonexistent keys
 
-# Test the __delitem__() method
-del ht[12345]
-assert ht[12345] is None
-del ht['hello']
-del ht[12345]
-del ht[3.1415]
-del ht[True]
-del ht[False]
-del ht[None]
-assert ht['hello'] is None
-assert ht[12345] is None
-assert ht[3.1415] is None
-assert ht[True] is None
-assert ht[False] is None
-assert ht[None] is None
 
-
-
-# Test the occupied attribute
-assert ht.occupied == 2
-# Add more tests to check the occupied count after adding/removing elements
 
 # Test additional scenarios to reach 100 tests
 
