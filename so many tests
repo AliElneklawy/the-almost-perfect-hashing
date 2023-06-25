@@ -101,4 +101,3 @@ ht['key3'] = 'value3'
 assert ht['key2'] == 'value2'
 assert ht['key3'] == 'value3'
 
-# Total: 100 tests
