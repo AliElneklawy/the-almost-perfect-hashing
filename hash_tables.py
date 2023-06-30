@@ -63,3 +63,11 @@ class HashTable:
         for idx, elmnt in enumerate(self.arr[h]):
             if elmnt[0] == key:
                 del self.arr[h][idx]
+
+    def __repr__(self) -> str:
+        key_vals = []
+        for k_v in self.arr:
+            if k_v != []:
+                key_vals.append(k_v)
+
+        return str(key_vals)
